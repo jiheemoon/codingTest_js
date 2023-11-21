@@ -9,19 +9,23 @@ const testCases = [['  + + - + -+-', '  ++--+-+  ', '++ -+ -+-', '+++- +-+'], ['
 const answers = [];
 for (let index = 0; index < testCases.length; index++) {
     const testCase = testCases[index];
-    var stringArray = '';
+    var result = '';
+
     for (let index = 0; index < testCase.length; index++) {
         // 대체
         const binary = testCase[index].replaceAll(' ', '').replaceAll('+', '1').replaceAll('-', '0');
-        // 2진수(binary) -> 10진수(decimal)로
+        // binaryToDecimal
         const decimal = binaryToDecimal(binary);
         // 10진수 아스키코드표 문자로
-        stringArray += String.fromCharCode(decimal);
+        result += String.fromCharCode(decimal);
     }   
-    answers.push(stringArray);
+    answers.push(result);
 }
 console.log(answers);
+//['jeju', 'cat', 'lion']
 
+
+// 2진수(binary) -> 10진수(decimal)로
 function binaryToDecimal(binary){
     binary = binary.split('').reverse();
     

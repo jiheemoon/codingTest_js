@@ -8,8 +8,8 @@ const testcases = ['adr10bb1d9ia10e33b7u88k3j1a3v11v9', 'r1rr2rrr3rrrrr4rrrrrre5
 const answers = [];
 for (let index = 0; index < testcases.length; index++) {
     const testcase = testcases[index];
-    
     var result = 0;
+
     let found = testcase.match(/(?:[rev]10)|(?:[rev][0-9])/g); // ?: 캡처없는 그룹화 | 혹은 [] 내부문자중에 하나가 포함되어 있을 경우 /g 모든패턴 찾기
     //console.log(found);
     for (let index = 0; index < found.length; index++) {
@@ -24,3 +24,4 @@ for (let index = 0; index < testcases.length; index++) {
     answers.push(result.substring(0,1)+'월 '+result.substring(1,2)+'일');
 }
 console.log(answers);
+//['2월 3일', '1월 5일', '2월 8일']
