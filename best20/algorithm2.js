@@ -13,6 +13,7 @@ for (let index = 0; index < testcases.length; index++) {
     let found = testcase.match(/(?:[rev]10)|(?:[rev][0-9])/g); // ?: 캡처없는 그룹화 | 혹은 [] 내부문자중에 하나가 포함되어 있을 경우 /g 모든패턴 찾기
     //console.log(found);
     for (let index = 0; index < found.length; index++) {
+        //문자열 제거 후 정수형으로 변환
         result += found[index].substr(1)*1;
     }
     result = result.toString();
